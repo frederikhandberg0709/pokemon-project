@@ -24,7 +24,7 @@ export function usePokemonList({ page = 1, limit = 20 }: UsePokemonListProps) {
     queryKey: ["pokemonList", page, limit],
     queryFn: async () => {
       const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemons?offset=${offset}&limit=${limit}`,
+        `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`,
       );
 
       if (!response.ok) {
