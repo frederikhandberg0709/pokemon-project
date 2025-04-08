@@ -1,0 +1,65 @@
+{
+  "_Footer-B5mroQMv.js": {
+    "file": "assets/Footer-B5mroQMv.js",
+    "name": "Footer",
+    "imports": [
+      "_QueryClientProvider-CQ6LpxiL.js",
+      "_chunk-XJI4KG32-BDTyQe5R.js"
+    ]
+  },
+  "_QueryClientProvider-CQ6LpxiL.js": {
+    "file": "assets/QueryClientProvider-CQ6LpxiL.js",
+    "name": "QueryClientProvider",
+    "imports": [
+      "_chunk-XJI4KG32-BDTyQe5R.js"
+    ]
+  },
+  "_chunk-XJI4KG32-BDTyQe5R.js": {
+    "file": "assets/chunk-XJI4KG32-BDTyQe5R.js",
+    "name": "chunk-XJI4KG32"
+  },
+  "app/root.tsx?__react-router-build-client-route": {
+    "file": "assets/root-BUYQu_2j.js",
+    "name": "root",
+    "src": "app/root.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_QueryClientProvider-CQ6LpxiL.js",
+      "_chunk-XJI4KG32-BDTyQe5R.js"
+    ],
+    "css": [
+      "assets/root-yTEN0tbb.css"
+    ]
+  },
+  "app/routes/pokedex.tsx?__react-router-build-client-route": {
+    "file": "assets/pokedex-Dp7EE_0B.js",
+    "name": "pokedex",
+    "src": "app/routes/pokedex.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_QueryClientProvider-CQ6LpxiL.js",
+      "_chunk-XJI4KG32-BDTyQe5R.js",
+      "_Footer-B5mroQMv.js"
+    ]
+  },
+  "app/routes/pokemon-details.tsx?__react-router-build-client-route": {
+    "file": "assets/pokemon-details-CrsStT06.js",
+    "name": "pokemon-details",
+    "src": "app/routes/pokemon-details.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_QueryClientProvider-CQ6LpxiL.js",
+      "_chunk-XJI4KG32-BDTyQe5R.js",
+      "_Footer-B5mroQMv.js"
+    ]
+  },
+  "node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx": {
+    "file": "assets/entry.client-D41dTFMy.js",
+    "name": "entry.client",
+    "src": "node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx",
+    "isEntry": true,
+    "imports": [
+      "_chunk-XJI4KG32-BDTyQe5R.js"
+    ]
+  }
+}
