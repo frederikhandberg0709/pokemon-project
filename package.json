@@ -2,11 +2,14 @@
   "name": "pokedex-project",
   "private": true,
   "type": "module",
+  "homepage": "https://github.com/frederikhandberg0709/pokemon-project/",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@react-router/node": "^7.4.1",
@@ -30,6 +33,7 @@
     "tailwindcss": "^4.0.17",
     "typescript": "^5.7.2",
     "vite": "^5.4.11",
+    "vite-plugin-gh-pages": "^1.0.1",
     "vite-tsconfig-paths": "^5.1.4"
   }
 }
