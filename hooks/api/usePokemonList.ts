@@ -1,6 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
+import { getPokemonIdFromUrl } from "utils/getPokemonIdFromUrl";
+
+interface PokemonFromApi {
+  name: string;
+  url: string;
+}
 
 interface PokemonListItem {
+  id: string;
   name: string;
   url: string;
 }
@@ -31,7 +38,21 @@ export function usePokemonList({ page = 1, limit = 20 }: UsePokemonListProps) {
         throw new Error(`Failed to fetch Pokemon list`);
       }
 
-      return response.json();
+      const data = await response.json();
+
+      const resultsWithIds = data.results.map((pokemon: PokemonFromApi) => {
+        const id = getPokemonIdFromUrl(pokemon.url);
+
+        return {
+          ...pokemon,
+          id: id,
+        };
+      });
+
+      return {
+        ...data,
+        results: resultsWithIds,
+      };
     },
   });
 }

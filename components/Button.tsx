@@ -21,7 +21,7 @@ export default function Button({
       onClick={onClick}
       disabled={disabled || isLoading}
       className={twMerge(
-        "scale-100 cursor-pointer rounded-xl bg-blue-500 px-2.5 py-2 transition duration-200 ease-in-out hover:scale-105 hover:bg-blue-600 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50",
+        "scale-100 cursor-pointer rounded-xl bg-blue-500 px-2.5 py-2 text-center font-semibold transition duration-200 ease-in-out hover:scale-105 hover:bg-blue-600 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50",
         className,
       )}
       {...props}

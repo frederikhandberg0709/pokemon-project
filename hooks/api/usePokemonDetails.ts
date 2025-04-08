@@ -1,12 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 
 interface PokemonStat {
+  id: string;
   name: string;
   value: number;
 }
 
 interface Pokemon {
-  id: number;
+  id: string;
   name: string;
   types: string[];
   stats: PokemonStat[];
@@ -14,6 +15,8 @@ interface Pokemon {
   height: number;
   weight: number;
   sprite: string;
+  officialArtwork?: string;
+  description?: string;
 }
 
 export function usePokemonDetails(pokemonUrl: string | null) {
@@ -31,6 +34,24 @@ export function usePokemonDetails(pokemonUrl: string | null) {
       }
 
       const data = await response.json();
+
+      let description = "";
+      try {
+        const speciesReponse = await fetch(data.species.url);
+
+        if (speciesReponse.ok) {
+          const speciesData = await speciesReponse.json();
+          const englishFlavorText = speciesData.flavor_text_entries.find(
+            (entry: { language: { name: string } }) =>
+              entry.language.name === "en",
+          );
+          if (englishFlavorText) {
+            description = englishFlavorText.flavor_text.replace(/\f/g, " ");
+          }
+        }
+      } catch (error) {
+        console.error("Failed to fetch species data:", error);
+      }
 
       return {
         id: data.id,
@@ -50,6 +71,9 @@ export function usePokemonDetails(pokemonUrl: string | null) {
         height: data.height,
         weight: data.weight,
         sprite: data.sprites.front_default,
+        officialArtwork:
+          data.sprites.other?.["official-artwork"]?.front_default || null,
+        description,
       };
     },
     enabled: !!pokemonUrl,
